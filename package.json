@@ -1,0 +1,24 @@
+{
+  "name": "worker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Toha",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-dwebp": "^1.0.2",
+    "gulp-gm": "0.0.9",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-imagemin-fix": "^5.0.4",
+    "gulp-jpeg-2000": "^1.1.4",
+    "gulp-webp": "^4.0.1"
+  },
+  "dependencies": {
+    "gulp-tinypng-compress": "^1.2.5"
+  }
+}
