@@ -9,14 +9,10 @@ module.exports = {
 		"eslint:recommended",
 	],
 	"parserOptions": {
-		"ecmaFeatures": {
-			"jsx": true
-		},
+		"ecmaFeatures": {},
 		"ecmaVersion": 12
 	},
-	"plugins": [
-		"react"
-	],
+	"plugins": [],
 	"rules": {
 		"indent": [
 			"error",
