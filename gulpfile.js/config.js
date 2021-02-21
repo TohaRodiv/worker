@@ -2,7 +2,7 @@ const path = require("path");
 
 
 const root = path.join (__dirname, "../");
-const build_dir = path.join (root, "dist");
+const build_dir = path.join (root, "build");
 const src_dir = path.join (root, "src");
 
 const config = {

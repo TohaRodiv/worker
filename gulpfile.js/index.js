@@ -1,6 +1,6 @@
 const { series, parallel, } = require("gulp");
 
-const jsdoc = require("./tasks/jsdoc");
+const genDoc = require("./tasks/jsdoc");
 const clean = require("./tasks/clean");
 
 const imageMinify = require("./tasks/imageMinify");
@@ -11,8 +11,9 @@ const lighthouse = require("./tasks/lighthouse");
 
 const pugToHtml = require("./tasks/pugToHtml");
 const sass = require("./tasks/sass");
-const scriptjs = require("./tasks/script");
-const concatjs = require("./tasks/concatJs");
+const js = require("./tasks/script");
+const concatJs = require("./tasks/concatJs");
+const concatCss = require("./tasks/concat-css");
 
 
 const setMode = isProduction => cb => {
@@ -71,14 +72,19 @@ exports["sass"] = series (sass);
  * Раставляет правильные отступы, ковычки одного типа ("), раставляет точки с запятой (;).
  * Создает обычную версию *.js и минифицированную *.min.js. Без sourcemap.
  */
-exports["js"] = series (scriptjs);
+exports["js"] = series (js);
 /**
- * @var gen-readme
+ * @var gen-doc
  * @description Генерирует документацию эту документацию из gulpfile.js/index.js
  */
-exports["gen-readme"] = series (jsdoc);
+exports["gen-doc"] = series (genDoc);
 /**
  * @var concat-js
- * @description Объединяет несколько .*js файлов в один минифицированный и не минифицированный файл.
+ * @description Объединяет несколько *.js файлов в один минифицированный и не минифицированный файл.
  */
-exports["concat-js"] = series (concatjs);
+exports["concat-js"] = series (concatJs);
+/**
+ * @var concat-css
+ * @description Объединяет несколько *.css файлов в один минифицированный и не минифицированный файл.
+ */
+exports["concat-css"] = series (concatCss);
