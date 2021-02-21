@@ -9,6 +9,8 @@ const toWebp = require("./tasks/toWebp");
 const lighthouse = require("./tasks/lighthouse");
 
 const pugToHtml = require("./tasks/pugToHtml");
+const sass = require("./tasks/sass");
+const scriptjs = require("./tasks/script");
 
 
 const setMode = isProduction => cb => {
@@ -25,3 +27,5 @@ exports["tinypng"] = parallel(tinypngCompress);
 exports["to-webp"] = parallel(toWebp);
 exports["lighthouse"] = series(lighthouse); // todo: check work
 exports["pug"] = series (pugToHtml);
+exports["sass"] = series (sass);
+exports["js"] = series (scriptjs);

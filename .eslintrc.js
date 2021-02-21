@@ -2,15 +2,18 @@ module.exports = {
 	"env": {
 		"browser": false,
 		"commonjs": true,
-		"es2021": true,
+		"es2020": true,
 		"node": true,
 	},
 	"extends": [
 		"eslint:recommended",
 	],
+	"parser": "babel-eslint",
 	"parserOptions": {
-		"ecmaFeatures": {},
-		"ecmaVersion": 12
+		"ecmaVersion": 11,
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true
+		}
 	},
 	"plugins": [],
 	"rules": {
@@ -29,6 +32,11 @@ module.exports = {
 		"semi": [
 			"error",
 			"always"
-		]
+		],
+		"space-infix-ops": 2,
+		"space-in-parens": 2,
+		"no-multi-spaces": 2,
+		"semi-spacing": 2,
+		"no-multiple-empty-lines": 2,
 	}
 };

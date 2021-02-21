@@ -2,7 +2,7 @@ const gulp = require("gulp");
 
 const imageMinify = require("./imageMinify");
 const svgSprite = require("./svgSprite");
-const styles = require("./styles");
+const styles = require("./sass");
 const pug2html = require("./pug2html");
 const script = require("./script");
 const copyDependencies = require("./copyDependencies");
