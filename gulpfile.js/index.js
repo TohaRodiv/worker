@@ -12,12 +12,9 @@ const lighthouse = require("./tasks/lighthouse");
 const pugToHtml = require("./tasks/pugToHtml");
 const sass = require("./tasks/sass");
 const scriptjs = require("./tasks/script");
+const concatjs = require("./tasks/concatJs");
 
 
-/**
- * 
- * @param {bool} isProduction - Устанавливает режим разработки: true - production, false - development
- */
 const setMode = isProduction => cb => {
 	process.env.NODE_ENV = isProduction ? "production" : "development";
 	cb();
@@ -26,7 +23,9 @@ const setMode = isProduction => cb => {
 
 /**
  * @var dev
- * @description Запускает локальный live-сервер, не минифицирует выходные файлы, пропускает все через валидаторы и форматирует код (eslint, beautyfy js, css, html), чтобы в будущем было его легче поддерживать.
+ * @description Запускает локальный live-сервер, не минифицирует выходные файлы,
+ * пропускает все через валидаторы и форматирует код (eslint, beautyfy js, css, html),
+ * чтобы в будущем было его легче поддерживать.
  */
 exports["dev"] = series(setMode (false), clean);
 
@@ -38,12 +37,15 @@ exports["build"] = series(setMode(true), clean);
 
 /**
  * @var imagemin
- * @description Сжимает изображения. Не очень эффективно. Поддерживает файлы: gif,png,jpg,svg,webp. Для лучшего сжатия лучше использовать tinypng.
+ * @description Сжимает изображения. Не очень эффективно. Поддерживает файлы: gif,png,jpg,svg,webp.
+ * Для лучшего сжатия лучше использовать tinypng.
  */
 exports["imagemin"] = parallel(imageMinify);
 /**
  * @var tinypng
- * @description Сжимает изображения. Очень эффективно. Есть ограничения на 500 файлов в месяц для бесплатного API. Если это число превышенно, то необходимо либо подождать месяц, либо сменить API-KEY для этой задаче, а чуть позже можно снова вернуть старый API-KEY. Поддерживает файлы: png,jpg,webp. Прекрасно подходит для большинство задач.
+ * @description Сжимает изображения. Очень эффективно. Есть ограничения на 500 файлов в месяц для бесплатного API.
+ * Если это число превышенно, то необходимо либо подождать месяц, либо сменить API-KEY для этой задачи,
+ * а чуть позже можно снова вернуть старый API-KEY. Поддерживает файлы: png,jpg,webp. Прекрасно подходит для большинство задач.
  */
 exports["tinypng"] = parallel(tinypngCompress);
 /**
@@ -59,12 +61,15 @@ exports["lighthouse"] = series(lighthouse); // todo: check work
 exports["pug"] = series (pugToHtml);
 /**
  * @var sass
- * @description Компилятор sass/scss в css. Подключен автопрефиксер. На выходе имеем обычную версию *.css и минифицированную *.min.css. Sourcemap отключен.
+ * @description Компилятор sass/scss в css. Подключен автопрефиксер.
+ * На выходе имеем обычную версию *.css и минифицированную *.min.css. Sourcemap отключен.
  */
 exports["sass"] = series (sass);
 /**
  * @var js
- * @description Форматирует и проверяет javascript код. Раставляет правильные отступы, ковычки одного типа ("), раставляет точки с запятой (;). Создает обычную версию *.js и минифицированную *.min.js. Без sourcemap.
+ * @description Форматирует и проверяет javascript код.
+ * Раставляет правильные отступы, ковычки одного типа ("), раставляет точки с запятой (;).
+ * Создает обычную версию *.js и минифицированную *.min.js. Без sourcemap.
  */
 exports["js"] = series (scriptjs);
 /**
@@ -72,3 +77,8 @@ exports["js"] = series (scriptjs);
  * @description Генерирует документацию эту документацию из gulpfile.js/index.js
  */
 exports["gen-readme"] = series (jsdoc);
+/**
+ * @var concat-js
+ * @description Объединяет несколько .*js файлов в один минифицированный и не минифицированный файл.
+ */
+exports["concat-js"] = series (concatjs);
