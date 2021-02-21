@@ -9,6 +9,7 @@ const { write } = require("lighthouse/lighthouse-cli/printer");
 const reportGenerator = require("lighthouse/lighthouse-core/report/report-generator");
 
 const config = require("./../config");
+//
 
 async function getNameHTMLFiles() {
 	const files = await fs.readdir(config.dist_dir);
