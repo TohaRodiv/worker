@@ -9,6 +9,8 @@
   "author": "Toha",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "chrome-launcher": "^0.13.4",
     "del": "^6.0.0",
     "eslint": "^7.20.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -16,12 +18,18 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-sonarjs": "^0.6.0",
     "gulp": "^4.0.2",
-    "gulp-dwebp": "^1.0.2",
     "gulp-gm": "0.0.9",
+    "gulp-html-bem-validator": "^1.0.5",
     "gulp-imagemin-fix": "^5.0.4",
     "gulp-jpeg-2000": "^1.1.4",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-pug-linter": "^1.5.0",
     "gulp-tinypng-compress": "^1.2.5",
-    "gulp-webp": "^4.0.1"
+    "gulp-w3c-html-validator": "^3.0.0",
+    "gulp-webp": "^4.0.1",
+    "lighthouse": "^7.1.0",
+    "open": "^7.4.2"
   },
   "dependencies": {}
 }

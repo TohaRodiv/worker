@@ -1,7 +1,5 @@
 const del = require("del");
+const { build } = require ("./../config");
 
-module.exports = function clean(cb) {
-	return del("build").then(() => {
-		cb();
-	});
-};
+
+module.exports = () => del (build.root);
