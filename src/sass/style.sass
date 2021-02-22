@@ -3,8 +3,13 @@ $cta-image: "https://www.trumpf.com/filestorage/TRUMPF_Master/_processed_/6/f/cs
 body
 	margin: 0
 	font-family: "Exo2", sans-serif
+	display: grid
+	grid-template-rows: 3
+	grid-template-columns: 2
+	grid-gap: 1
 
 .cta
+	display: subgrid
 	background: url($cta-image) no-repeat center / cover
 	min-height: 100vh
 	display: flex
@@ -61,3 +66,15 @@ body
 			background-color: rgba(155, 255, 250, .8)
 			border-color: rgba(155, 255, 250, .5)
 			transition: 350ms
+
+
+.aaa
+	font-size: 2em
+.bbb
+	font-size: 2em
+.cc
+	font-size: 2em
+
+.ddd
+	font-size: 2em
+	font-weight: 400

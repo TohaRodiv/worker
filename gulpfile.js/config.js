@@ -1,5 +1,6 @@
 const path = require("path");
 const concatOrder = require("./concat-order.config");
+const beautifyConfig = require("./beautifyrc.json");
 
 
 const root = path.join (__dirname, "../");
@@ -10,7 +11,7 @@ const config = {
 	/**
 	 * Tinypng api-key
 	 */
-	TINYPNG_API_KEY: "gPC3S4MSYBxXtsYwQV8KTrlkSgW3p086",
+	TINYPNG_API_KEY: ["gPC3S4MSYBxXtsYwQV8KTrlkSgW3p086"][0],
 	/**
 	 * Root dir
 	 */
@@ -23,6 +24,10 @@ const config = {
 	 * Concat order config
 	 */
 	order: concatOrder,
+	/**
+	 * Config gulp-beautify
+	 */
+	beautify: beautifyConfig,
 	/**
 	 * Build folder
 	 */

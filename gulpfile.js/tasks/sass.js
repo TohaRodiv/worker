@@ -1,47 +1,97 @@
+const { build, src, beautify } = require("./../config");
 const gulp = require("gulp");
 const plumber = require("gulp-plumber");
 const sass = require("gulp-sass");
 const cleanCSS = require("gulp-clean-css");
-// const sourcemaps = require("gulp-sourcemaps");
+const sourcemaps = require("gulp-sourcemaps");
 const shorthand = require("gulp-shorthand");
 const autoprefixer = require("gulp-autoprefixer");
-const beautify = require("gulp-cssbeautify");
+const gulpBeautify = require("gulp-beautify");
 const rename = require("gulp-rename");
-const { build, src } = require("./../config");
+const gulpif = require("gulp-if");
+const createNotify = require("./../util/create-notify");
+
+const CONFIG = {
+	SOURCEMAP: false,
+	MINIFIED: true,
+};
+
+const onError = createNotify("error", {
+	title: "ошибка компиляции!",
+	sound: true,
+	paramNames: {
+		plugin: "plugin",
+		title: "title",
+		msg: "messageOriginal",
+		file: "file",
+	},
+
+	isDebug: true,
+});
 
 module.exports = () =>
 	gulp
 		.src(`${src.sass}/**/*.{sass,scss}`)
-		.pipe(plumber())
-		// .pipe(sourcemaps.init())
+		.pipe(plumber({ errorHandler: onError }))
+		.pipe(gulpif(CONFIG.SOURCEMAP && CONFIG.MINIFIED, sourcemaps.init()))
 		.pipe(sass())
+		.pipe(
+			cleanCSS(
+				{
+					debug: true,
+					compatibility: "*",
+					level: {
+						2: {
+							mergeAdjacentRules: true, // controls adjacent rules merging; defaults to true
+							mergeIntoShorthands: true, // controls merging properties into shorthands; defaults to true
+							mergeMedia: true, // controls `@media` merging; defaults to true
+							mergeNonAdjacentRules: true, // controls non-adjacent rule merging; defaults to true
+							mergeSemantically: false, // controls semantic merging; defaults to false
+							overrideProperties: true, // controls property overriding based on understandability; defaults to true
+							removeEmpty: true, // controls removing empty rules and nested blocks; defaults to `true`
+							reduceNonAdjacentRules: true, // controls non-adjacent rule reducing; defaults to true
+							removeDuplicateFontRules: true, // controls duplicate `@font-face` removing; defaults to true
+							removeDuplicateMediaBlocks: true, // controls duplicate `@media` removing; defaults to true
+							removeDuplicateRules: true, // controls duplicate rules removing; defaults to true
+							removeUnusedAtRules: false, // controls unused at rule removing; defaults to false (available since 4.1.0)
+							restructureRules: false, // controls rule restructuring; defaults to false
+							skipProperties: [], // controls which properties won't be optimized, defaults to `[]` which means all will be optimized (since 4.1.0)
+						},
+					},
+				},
+				(details) => {
+					console.log(
+						`${details.name}: Original size:${details.stats.originalSize}`
+					);
+				}
+			)
+		)
 		.pipe(
 			autoprefixer({
 				cascade: false,
 			})
 		)
 		.pipe(shorthand())
-		.pipe(
-			beautify({
-				indent: "	",
-				openbrace: "end-of-line", // or "separate-line"
-				autosemicolon: true,
-			})
-		)
+		.pipe(gulpBeautify.css(beautify.css))
 		.pipe(gulp.dest(build.css))
 		.pipe(
 			cleanCSS(
 				{
 					debug: true,
 					compatibility: "*",
+					level: {
+						2: {
+							all: true,
+						},
+					},
 				},
 				(details) => {
 					console.log(
-						`${details.name}: Original size:${details.stats.originalSize} - Minified size: ${details.stats.minifiedSize}`
+						`${details.name}: Minified size: ${details.stats.minifiedSize}`
 					);
 				}
 			)
 		)
-		// .pipe(sourcemaps.write())
-		.pipe(rename({ suffix: ".min" }))
-		.pipe(gulp.dest(build.css));
+		.pipe(gulpif(CONFIG.SOURCEMAP && CONFIG.MINIFIED, sourcemaps.write()))
+		.pipe(gulpif(CONFIG.MINIFIED, rename({ suffix: ".min" })))
+		.pipe(gulpif(CONFIG.MINIFIED, gulp.dest(build.css)));

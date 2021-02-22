@@ -24,10 +24,6 @@ const setMode = isProduction => cb => {
 };
 
 /**
- * Todo: вынести конфиги для html/pug/js форматтеров в один файл
- */
-
-/**
  * @var dev
  * @description Запускает локальный live-сервер, не минифицирует выходные файлы,
  * пропускает все через валидаторы и форматирует код (eslint, beautyfy js, css, html),
