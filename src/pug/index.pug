@@ -1,16 +1,22 @@
 doctype html
 html(lang="en")
-  head
-    title= pageTitle
-    script(type='text/javascript').
-      if (foo) bar(1 + 5)
-  body
-    h1 Pug - node template engine
-    #container.col
-      if youAreUsingPug
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Pug is a terse and simple templating language with a
-        strong focus on performance and powerful features.
+	head
+		meta(http-equiv="Content-Type" content="text/html;charset=UTF-8")
+		title PUG
+		link(rel="stylesheet", href="./css/style.min.css")
+	body
+		.cta
+			.cta__container
+				.cta__head CTA
+				.cta__text Describe this CTA block
+				.cta__btn-group
+					button.cta__btn +7 (4212) 63-32-32
+					button.cta__btn Купить
+					button.cta__btn.inverted Позвонить
+		script.
+			const btns = document.querySelectorAll (".cta__btn");
+			for (let i = 0; i < btns.length; i++) {
+				btns[i].addEventListener ("click", e => {
+					alert (e.currentTarget.innerText);
+				});
+			}

@@ -29,7 +29,7 @@ const config = {
 	build: {
 		root: build_dir,
 		img: path.join (build_dir, "images"),
-		html: path.join (build_dir, "html"),
+		html: build_dir,
 		css: path.join (build_dir, "css"),
 		js: path.join (build_dir, "js"),
 	},

@@ -1,23 +1,25 @@
 const gulp = require("gulp");
-const plumber = require("gulp-plumber");
-const pug = require("gulp-pug");
-const pugLinter = require("gulp-pug-linter");
-const htmlValidator = require("gulp-w3c-html-validator");
-const bemValidator = require("gulp-html-bem-validator");
+const { build, src, } = require ("./../config");
+const include = require ("gulp-file-include");
+const ignore = require("gulp-ignore");
+const validator = require("gulp-w3c-html-validator");
 const beautify = require("gulp-html-beautify");
-const { build, src, } = require("./../config");
+
+
+const EXCLUDE_INC_FILE = "**/*.inc.html";
+const EXCLUDE_INC_DIR = "inc/**/*";
 
 
 module.exports = () =>
 	gulp
-		.src(`${src.pug}/**/*.pug`)
-		.pipe(plumber())
-		.pipe(pugLinter({ reporter: "default" }))
-		.pipe(pug({
-			pretty: true
+		.src (`${src.html}/**/*.html`)
+		.pipe (include ({
+			prefix: "@",
 		}))
-		.pipe(htmlValidator())
-		.pipe(bemValidator())
+		.pipe (ignore.exclude (EXCLUDE_INC_FILE))
+		.pipe (ignore.exclude (EXCLUDE_INC_DIR))
+		.pipe (validator ())
+		.pipe (validator.reporter ())
 		.pipe (beautify (
 			{
 				"indent_size": 1,
@@ -42,4 +44,4 @@ module.exports = () =>
 				"end_with_newline": false
 			}
 		))
-		.pipe(gulp.dest(build.html));
+		.pipe (gulp.dest (build.html));

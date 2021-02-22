@@ -1,23 +1,63 @@
+$cta-image: "https://www.trumpf.com/filestorage/TRUMPF_Master/_processed_/6/f/csm_TruLaserTube-technology-special-tube-Keyvisual_91dcd6bea7.jpg"
+
 body
 	margin: 0
-	font-family: sans-serif
+	font-family: "Exo2", sans-serif
 
-	.lock
-		overflow: hidden
+.cta
+	background: url($cta-image) no-repeat center / cover
+	min-height: 100vh
+	display: flex
+	align-items: center
+	justify-content: center
 
-.btn
-	background-color: white
-	color: black
+	&__container
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		max-width: 70%
 
-	&__inverted
-		background-color: black
-		color: white
+		background-color: rgba(0, 0, 0, .45)
 
-		&--light
-			background-color: #FBC
-			color: #555
-			transform: scale(1.1)
-	
-	&.active
-		outline: 1px solid skyblue
+	&__head
+		font-size: 2em
+		font-weight: bold
+		margin: 1em
+		color: #FFF
+
+	&__text
+		font-size: 1.5em
+		color: #FFF
+
+	&__btn-group
+		display: flex
+		flex-wrap: wrap
+		margin: 1em 0 0 0
+		padding: .5em 1em
+
+	&__btn
+		text-decoration: none
+		font-size: 1em
+		font-variant: small-caps
+		color: #FFF
+		padding: .5em 1em
+		margin: .5em
+
+		border: 2px solid rgba(255, 155, 50, .85)
+		background-color: rgba(255, 155, 50, .8)
 		transition: 350ms
+
+		&.inverted
+			background-color: rgba(280, 50, 0, .8)
+			border-color: rgba(280, 50, 0, .5)
+
+		&:hover, &:focus
+			background-color: rgba(155, 255, 250, .8)
+			border-color: rgba(155, 255, 250, .5)
+			transition: 350ms
+
+		&.inverted:hover, &.inverted:focus
+			background-color: rgba(155, 255, 250, .8)
+			border-color: rgba(155, 255, 250, .5)
+			transition: 350ms

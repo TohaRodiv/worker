@@ -12,6 +12,8 @@ const lighthouse = require("./tasks/lighthouse");
 const pugToHtml = require("./tasks/pugToHtml");
 const sass = require("./tasks/sass");
 const js = require("./tasks/script");
+const html = require("./tasks/html");
+
 const concatJs = require("./tasks/concat-js");
 const concatCss = require("./tasks/concat-css");
 
@@ -21,6 +23,9 @@ const setMode = isProduction => cb => {
 	cb();
 };
 
+/**
+ * Todo: вынести конфиги для html/pug/js форматтеров в один файл
+ */
 
 /**
  * @var dev
@@ -74,6 +79,16 @@ exports["js"] = series (js);
 /**
  * @var gen-doc
  * @description Генерирует документацию эту документацию из gulpfile.js/index.js
+ */
+/**
+ * @var html
+ * @description Форматирует и проверяет html код. Подключает другие html файлы. Для подробностей
+ * см. настройки данного таска.
+ */
+exports["html"] = series (html);
+/**
+ * @var gen-doc
+ * @description Генерирует документацию
  */
 exports["gen-doc"] = series (genDoc);
 /**
