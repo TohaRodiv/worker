@@ -12,7 +12,7 @@ const lighthouse = require("./tasks/lighthouse");
 const pugToHtml = require("./tasks/pugToHtml");
 const sass = require("./tasks/sass");
 const js = require("./tasks/script");
-const concatJs = require("./tasks/concatJs");
+const concatJs = require("./tasks/concat-js");
 const concatCss = require("./tasks/concat-css");
 
 
@@ -29,13 +29,11 @@ const setMode = isProduction => cb => {
  * чтобы в будущем было его легче поддерживать.
  */
 exports["dev"] = series(setMode (false), clean);
-
 /**
  * @var build
  * @description Собирает и минифицирует код для лучшей производительности
  */
 exports["build"] = series(setMode(true), clean);
-
 /**
  * @var imagemin
  * @description Сжимает изображения. Не очень эффективно. Поддерживает файлы: gif,png,jpg,svg,webp.

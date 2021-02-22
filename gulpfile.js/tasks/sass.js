@@ -6,7 +6,7 @@ const cleanCSS = require("gulp-clean-css");
 const shorthand = require("gulp-shorthand");
 const autoprefixer = require("gulp-autoprefixer");
 const rename = require("gulp-rename");
-const { build, src, } = require ("../config");
+const { build, src, } = require ("./../config");
 
 
 module.exports = () =>

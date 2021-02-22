@@ -4,11 +4,25 @@ const eslint = require("gulp-eslint");
 const terser = require("gulp-terser");
 const rename = require("gulp-rename");
 const beautify = require("gulp-beautify");
+const include = require("gulp-include");
+const ignore = require("gulp-ignore");
+/**
+ * TODO: add condition
+ */
+// const gulpif = require("gulp-if");
 
 
-module.exports = () => 
+const EXCLUDE_INC_FILE = "*.inc.js";
+const EXCLUDE_INC_DIR = "inc/**/*";
+
+module.exports = () =>
 	gulp
-		.src ([`${src.js}/**/*.js`])
+		.src (`${src.js}/**/*.js`)
+		.pipe (include ({
+			extensions: "js",
+			separateInputs: true, // allow each input file to use require-directives independently.
+			hardFail: false,
+		}))
 		.pipe(eslint({
 			fix: true,
 			/**
@@ -45,6 +59,8 @@ module.exports = () =>
 				"wrap_line_length": 0,
 			}
 		))
+		.pipe (ignore.exclude(EXCLUDE_INC_FILE))
+		.pipe (ignore.exclude(EXCLUDE_INC_DIR))
 		.pipe (gulp.dest (build.js))
 		.pipe (terser ())
 		.pipe(rename({ suffix: ".min" }))

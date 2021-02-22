@@ -1,4 +1,5 @@
 const path = require("path");
+const concatOrder = require("./concat-order.config");
 
 
 const root = path.join (__dirname, "../");
@@ -18,6 +19,10 @@ const config = {
 	 * Lighthouse report
 	 */
 	report: path.join (build_dir, "lighthouse-report"),
+	/**
+	 * Concat order config
+	 */
+	order: concatOrder,
 	/**
 	 * Build folder
 	 */
