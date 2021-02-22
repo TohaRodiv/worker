@@ -57,7 +57,11 @@ exports["tinypng"] = parallel(tinypngCompress);
  * @description Конвертирует png,jpg,jpeg,tiff в формат webp.
  */
 exports["to-webp"] = parallel(toWebp);
-exports["lighthouse"] = series(lighthouse); // todo: check work
+/**
+ * @var lighthouse
+ * @description Запускает lighthouse и сохраняет результат проверки в файл.
+ */
+exports["lighthouse"] = series(lighthouse);
 /**
  * @var pug
  * @description Компилятор pug/jade в html. Подключен линтер и БЭМ-валидатор.
@@ -77,27 +81,23 @@ exports["sass"] = series (sass);
  */
 exports["js"] = series (js);
 /**
- * @var gen-doc
- * @description Генерирует документацию эту документацию из gulpfile.js/index.js
- */
-/**
  * @var html
  * @description Форматирует и проверяет html код. Подключает другие html файлы. Для подробностей
  * см. настройки данного таска.
  */
 exports["html"] = series (html);
 /**
- * @var gen-doc
- * @description Генерирует документацию
+ * @var gen:doc
+ * @description Генерирует документацию.
  */
-exports["gen-doc"] = series (genDoc);
+exports["gen:doc"] = series (genDoc);
 /**
- * @var concat-js
+ * @var concat:js
  * @description Объединяет несколько *.js файлов в один минифицированный и не минифицированный файл.
  */
-exports["concat-js"] = series (concatJs);
+exports["concat:js"] = series (concatJs);
 /**
- * @var concat-css
+ * @var concat:css
  * @description Объединяет несколько *.css файлов в один минифицированный и не минифицированный файл.
  */
-exports["concat-css"] = series (concatCss);
+exports["concat:css"] = series (concatCss);

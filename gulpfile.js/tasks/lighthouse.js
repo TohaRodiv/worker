@@ -11,19 +11,19 @@ const reportGenerator = require("lighthouse/lighthouse-core/report/report-genera
 const config = require("./../config");
 
 
-const CHROME_LAUNCHER_PORT = 9222;
+const CHROME_LAUNCHER_PORT = 8080;
 const REPORT_PATH = config.report;
 
 async function getNameHTMLFiles() {
-	const files = await fs.readdir(config.build.root);
+	const files = await fs.readdir(config.build.html);
 
 	return files.filter(item => item.endsWith(".html"));
 }
 
 function startServer() {
 	return server.init({
-		server: config.root,
-		port: 8080,
+		server: config.build.root,
+		port: CHROME_LAUNCHER_PORT,
 		notify: false,
 		open: false,
 		cors: true
