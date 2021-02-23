@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const imagemin = require("gulp-imagemin-fix");
-const { build, src, } = require ("./../config");
+const { build, src, } = require ("../config");
 
 
 module.exports = () => 

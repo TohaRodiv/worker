@@ -14,6 +14,8 @@ const sourceFiles = {
 	css: path.join(src_dir, "css"),
 	sass: path.join(src_dir, "sass"),
 	js: path.join(src_dir, "js"),
+	doc: path.join(src_dir, "doc"),
+	encoding: path.join(src_dir, "encode"),
 };
 
 const config = {
@@ -46,6 +48,7 @@ const config = {
 		html: build_dir,
 		css: path.join(build_dir, "css"),
 		js: path.join(build_dir, "js"),
+		encoding: path.join(build_dir, "encode"),
 	},
 	/**
 	 * Source folder
@@ -73,7 +76,7 @@ const config = {
 			enable: true,
 			glob: `${sourceFiles.js}/**/*.js`,
 			options: {},
-			watch: ["script"],
+			watch: ["js"],
 			stream: true,
 		},
 		{
@@ -87,7 +90,7 @@ const config = {
 			enable: false,
 			glob: `${sourceFiles.img}/**/*.{png,jpg,jpeg,svg,webp}`,
 			options: {},
-			watch: ["imageMinify"],
+			watch: ["imagemin"],
 			parallel: true,
 		},
 	],
@@ -96,7 +99,7 @@ const config = {
 	 */
 	buildTasks: {
 		series: ["clean"],
-		parallel: ["pug", "sass", "script", "tinypngCompress"],
+		parallel: ["pug", "sass", "js", "tinypng"],
 	}
 };
 

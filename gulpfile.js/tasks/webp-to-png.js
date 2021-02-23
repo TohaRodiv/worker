@@ -1,4 +1,4 @@
-const { build, src } = require("./../config");
+const { build, src } = require("../config");
 const gulp = require("gulp");
 const dwebp = require("gulp-dwebp");
 

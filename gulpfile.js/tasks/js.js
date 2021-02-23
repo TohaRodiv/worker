@@ -1,4 +1,4 @@
-const { build, src, beautify } = require("./../config");
+const { build, src, beautify } = require("../config");
 const gulp = require("gulp");
 const eslint = require("gulp-eslint");
 const terser = require("gulp-terser");
@@ -6,7 +6,7 @@ const rename = require("gulp-rename");
 const gulpBeautify = require("gulp-beautify");
 const include = require("gulp-include");
 const ignore = require("gulp-ignore");
-const createNotify = require("./../util/create-notify");
+const createNotify = require("../util/create-notify");
 const plumber = require("gulp-plumber");
 const gulpif = require("gulp-if");
 

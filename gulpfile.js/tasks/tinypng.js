@@ -1,10 +1,10 @@
 /**
  * @repository https://github.com/stnvh/gulp-tinypng-compress#readme
  */
-const { build, src, TINYPNG_API_KEY, } = require("./../config");
+const { build, src, TINYPNG_API_KEY, } = require("../config");
 const gulp = require("gulp");
 const tinypng = require("gulp-tinypng-compress");
-const createNotify = require("./../util/create-notify");
+const createNotify = require("../util/create-notify");
 const plumber = require("gulp-plumber");
 
 const onError = createNotify("error", {

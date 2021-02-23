@@ -3,16 +3,16 @@ const { series, parallel } = require("gulp");
 const genDoc = require("./tasks/jsdoc");
 const clean = require("./tasks/clean");
 
-const imageMinify = require("./tasks/imageMinify");
-const tinypngCompress = require("./tasks/tinypngCompress");
-const toWebp = require("./tasks/toWebp");
-const webp2png = require("./tasks/webp2png");
+const imagemin = require("./tasks/imagemin");
+const tinypngCompress = require("./tasks/tinypng");
+const toWebp = require("./tasks/to-webp");
+const webp2png = require("./tasks/webp-to-png");
 
 const lighthouse = require("./tasks/lighthouse");
 
 const pug = require("./tasks/pug");
 const sass = require("./tasks/sass");
-const js = require("./tasks/script");
+const js = require("./tasks/js");
 const html = require("./tasks/html");
 
 const concatJs = require("./tasks/concat-js");
@@ -21,6 +21,10 @@ const concatCss = require("./tasks/concat-css");
 const watcher = require("./tasks/watch");
 const createServer = require("./tasks/server");
 const build = require("./tasks/build");
+
+const htmlToPug = require("./tasks/html-to-pug");
+const convertEncoding = require("./tasks/convert-encoding");
+
 
 const setMode = (isProduction) => (cb) => {
 	process.env.NODE_ENV = isProduction ? "production" : "development";
@@ -54,7 +58,7 @@ exports["watch"] = series(watcher());
  * @description Сжимает изображения. Не очень эффективно. Поддерживает файлы: gif,png,jpg,svg,webp.
  * Для лучшего сжатия лучше использовать tinypng.
  */
-exports["imagemin"] = parallel(imageMinify);
+exports["imagemin"] = parallel(imagemin);
 /**
  * @var tinypng
  * @description Сжимает изображения. Очень эффективно. Есть ограничения на 500 файлов в месяц для бесплатного API.
@@ -121,3 +125,13 @@ exports["concat:css"] = series(concatCss);
  * @description Очищает папку с собранным проектом.
  */
 exports["clean"] = clean;
+/**
+ * @var convert:html-to-pug
+ * @description Конвертирует html в pug.
+ */
+exports["convert:html-to-pug"] = series(htmlToPug);
+/**
+ * @var convert:encode
+ * @description Конвертирует кодировку документов.
+ */
+exports["convert:encode"] = convertEncoding;

@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const webp = require("gulp-webp");
-const { build, src } = require ("./../config");
+const { build, src } = require ("../config");
 
 
 module.exports = () =>

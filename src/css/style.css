@@ -1,0 +1,33 @@
+:root {
+	--alpha: #FFF;
+	--betta: #F00;
+}
+
+.color--alpha {
+	color: var(--alpha);
+}
+.color--betta {
+	color: var(--betta);
+}
+.color--gamma {
+	color: #FF0;
+}
+.color--etta {
+	color: #00F;
+}
+
+.block {
+	color: #FFF;
+}
+
+.swipe {
+	color: #F00;
+}
+
+.yellow {
+	color: #FFF;
+	background-color: #FF0;
+	border: 1px solid #F00;
+}
+
+.black--color { color: black; }

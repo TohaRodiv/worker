@@ -4,7 +4,7 @@ const webpack = require("webpack-stream");
 const CircularDependencyPlugin = require("circular-dependency-plugin");
 const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
 const eslint = require("gulp-eslint");
-const { build, src, } = require ("./../config");
+const { build, src, } = require ("../config");
 
 
 module.exports = () =>
