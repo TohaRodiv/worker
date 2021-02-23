@@ -65,9 +65,9 @@ const config = {
 	watch: [
 		{
 			enable: true,
-			glob: `${sourceFiles.pug}/**/*.pug`,
+			glob: `${sourceFiles.html}/**/*.html`,
 			options: {},
-			watch: ["pug"],
+			watch: ["html"],
 			stream: true,
 		},
 		{

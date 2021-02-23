@@ -2,37 +2,29 @@
 <html lang="en">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<title>PUG</title>
-	<link rel="stylesheet" href="./css/style.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Document</title>
 </head>
 
 <body>
-	<div class="cta">
-		<div class="cta__container">
-			<div class="cta__head">CTA</div>
-			<div class="cta__text">Describe this CTA block</div>
-			<div class="cta__btn-group">
-				<button class="cta__btn">+7 (4212) 63-32-32</button>
-				<button class="cta__btn">Купить</button>
-				<button class="cta__btn inverted">Позвонить</button>
-			</div>
+	<header class="header">
+		<div class="header__container">
+			<h1 class="logo">Lunar</h1>
 		</div>
-	</div>
-	<script src="./js/index.min.js"> </script>
-	<script>
-		const btns = document.querySelectorAll(".cta__btn");
-		for (let i = 0; i < btns.length; i++) {
-			btns[i].addEventListener("click", e => {
-				alert(e.currentTarget.innerText);
-			});
-		}
-
-	</script>
+	</header>
+	<main>
+		Main content
+	</main>
+	<footer class="footer">
+		<div class="footer__container">
+			<h2>Footer</h2>
+			<hr>
+			<p>&copy; 2021 - Lunar</p>
+		</div>
+	</footer>
 </body>
 
 </html>

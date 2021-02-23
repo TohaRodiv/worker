@@ -15,6 +15,7 @@ const pug = require("./tasks/pug");
 const sass = require("./tasks/sass");
 const js = require("./tasks/js");
 const html = require("./tasks/html");
+const css = require("./tasks/css");
 
 const concatJs = require("./tasks/concat-js");
 const concatCss = require("./tasks/concat-css");
@@ -229,3 +230,10 @@ exports["convert:to-svg"] = toSvg;
  * gulp zip
  */
 exports["zip"] = zip;
+/**
+ * @var css
+ * @description Форматирует css файлы, также есть возможность подключать файлы. См. пример для css: {@link https://www.npmjs.com/package/gulp-include}
+ * @example
+ * gulp css
+ */
+exports["css"] = css;

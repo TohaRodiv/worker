@@ -6,19 +6,16 @@
 	color: #000;
 }
 
-.block__item {
-	width: 60%;
-	margin: 0 auto;
+.header {
+	background: #eee;
+	border-bottom: 1px solid #e05;
 }
 
-.block--light {
-	background: #dedede;
-	color: #555;
-}
-
-.block--dark {
-	background: #555;
-	color: #dedede;
+.header__container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
 }
 
 body {
