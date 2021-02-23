@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Gulp-worker Global</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.dark.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.readable.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Gulp-worker</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#dev">dev</a></li><li><a href="global.html#build">build</a></li><li><a href="global.html#server">server</a></li><li><a href="global.html#watch">watch</a></li><li><a href="global.html#imagemin">imagemin</a></li><li><a href="global.html#tinypng">tinypng</a></li><li><a href="global.html#convert:to-webp">convert:to-webp</a></li><li><a href="global.html#convert:from-webp">convert:from-webp</a></li><li><a href="global.html#lighthouse">lighthouse</a></li><li><a href="global.html#pug">pug</a></li><li><a href="global.html#sass">sass</a></li><li><a href="global.html#js">js</a></li><li><a href="global.html#html">html</a></li><li><a href="global.html#gen:doc">gen:doc</a></li><li><a href="global.html#concat:js">concat:js</a></li><li><a href="global.html#concat:css">concat:css</a></li><li><a href="global.html#clean">clean</a></li><li><a href="global.html#convert:html-to-pug">convert:html-to-pug</a></li><li><a href="global.html#convert:encode">convert:encode</a></li><li><a href="global.html#convert:to-svg">convert:to-svg</a></li><li><a href="global.html#zip">zip</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Global</h1>
+<section>
+
+<header>
+    
+        <h2>
+        
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<hr>
+<dt class="name" id="dev">
+    <h4 id="dev"><span class="type-signature"></span>dev<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Запускает локальный live-сервер, не минифицирует выходные файлы,
+пропускает все через валидаторы и форматирует код (eslint, beautyfy js, css, html),
+чтобы в будущем было его легче поддерживать.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp dev
+
+[19:30:10] Using gulpfile ~/www/dev/gulp/gulpfile.js
+[19:30:10] Starting &#x27;dev&#x27;...
+[19:30:10] Finished &#x27;&lt;anonymous&gt;&#x27; after 1.15 ms
+✔ Gulp-html-bem-validator: Success. Filename:index.html
+[19:30:12] Finished &#x27;&lt;anonymous&gt;&#x27; after 1.42 s
+/style.css: Original size:1989
+/inc/settings.css: Original size:67
+/style.css: Minified size: 1345
+[19:30:12] Finished &#x27;&lt;anonymous&gt;&#x27; after 307 ms
+[Browsersync] Access URLs:
+----------------------------
+Local: http://localhost:3000
+----------------------------
+UI: http://localhost:3001
+----------------------------
+[Browsersync] Serving files from: /www/dev/gulp/gulpfile.js</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="build">
+    <h4 id="build"><span class="type-signature"></span>build<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Собирает и минифицирует код для лучшей производительности</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp build
+
+[19:35:48] Using gulpfile ~/www/dev/gulp/gulpfile.js
+[19:35:48] Starting &#x27;build&#x27;...
+/style.css: Original size:1989
+/inc/settings.css: Original size:67
+/style.css: Minified size: 1345
+✔ Gulp-html-bem-validator: Success. Filename:index.html
+[19:35:54] gulp-tinypng-compress [compressing] ✔ jpeg.jpeg (done)
+[19:35:54] gulp-tinypng-compress [compressing] ✔ jpg.jpg (done)
+[19:35:54] gulp-tinypng-compress [compressing] ✔ webp.webp (done)
+[19:35:55] gulp-tinypng-compress [compressing] ✔ png.png (done)
+[19:35:55] gulp-tinypng-compress Skipped: 0 images, Compressed: 4 images, Savings: 6.41 MB (ratio: 0.214)
+[19:35:55] Finished &#x27;build&#x27; after 6.78 s</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="server">
+    <h4 id="server"><span class="type-signature"></span>server<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Запускает локальный сервер.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp server
+
+[19:39:23] Using gulpfile ~/www/dev/gulp/gulpfile.js
+[19:39:23] Starting &#x27;server&#x27;...
+[Browsersync] Access URLs:
+----------------------------
+Local: http://localhost:3000
+----------------------------
+UI: http://localhost:3001
+----------------------------
+[Browsersync] Serving files from: /www/dev/gulp/build</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="watch">
+    <h4 id="watch"><span class="type-signature"></span>watch<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Запускает слежку за файлами и выполнение задач.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp watch</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="imagemin">
+    <h4 id="imagemin"><span class="type-signature"></span>imagemin<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Сжимает изображения. Не очень эффективно. Поддерживает файлы: gif,png,jpg,svg,webp.
+Для лучшего сжатия лучше использовать tinypng.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp imagemin</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="tinypng">
+    <h4 id="tinypng"><span class="type-signature"></span>tinypng<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Сжимает изображения. Очень эффективно. Есть ограничения на 500 файлов в месяц для бесплатного API.
+Если это число превышенно, то необходимо либо подождать месяц, либо сменить API-KEY для этой задачи,
+а чуть позже можно снова вернуть старый API-KEY. Поддерживает файлы: png,jpg,webp. Прекрасно подходит для большинство задач.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp tinypng</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="convert:to-webp">
+    <h4 id="convert:to-webp"><span class="type-signature"></span>convert:to-webp<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Конвертирует png,jpg,jpeg,tiff в формат webp.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp convert:to-webp</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="convert:from-webp">
+    <h4 id="convert:from-webp"><span class="type-signature"></span>convert:from-webp<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Конвертирует из webp в png.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp convert:from-webp</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="lighthouse">
+    <h4 id="lighthouse"><span class="type-signature"></span>lighthouse<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Запускает lighthouse и сохраняет результат проверки в файл.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp lighthouse</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="pug">
+    <h4 id="pug"><span class="type-signature"></span>pug<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Компилятор pug/jade в html. Подключен линтер и БЭМ-валидатор.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp pug</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="sass">
+    <h4 id="sass"><span class="type-signature"></span>sass<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Компилятор sass/scss в css. Подключен автопрефиксер.
+На выходе имеем обычную версию *.css и минифицированную *.min.css. Sourcemap отключен.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp sass</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="js">
+    <h4 id="js"><span class="type-signature"></span>js<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Форматирует и проверяет javascript код.
+Раставляет правильные отступы, ковычки одного типа (&quot;), раставляет точки с запятой (;).
+Создает обычную версию *.js и минифицированную *.min.js. Без sourcemap.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp js</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="html">
+    <h4 id="html"><span class="type-signature"></span>html<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Форматирует и проверяет html код. Подключает другие html файлы. Для подробностей
+см. настройки данного таска.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp html</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="gen:doc">
+    <h4 id="gen:doc"><span class="type-signature"></span>gen:doc<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Генерирует документацию.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp gen:doc</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="concat:js">
+    <h4 id="concat:js"><span class="type-signature"></span>concat:js<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Объединяет несколько *.js файлов в один минифицированный и не минифицированный файл.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp concat:js</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="concat:css">
+    <h4 id="concat:css"><span class="type-signature"></span>concat:css<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Объединяет несколько *.css файлов в один минифицированный и не минифицированный файл.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp concat:css</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="clean">
+    <h4 id="clean"><span class="type-signature"></span>clean<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Очищает папку с собранным проектом.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp clean</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="convert:html-to-pug">
+    <h4 id="convert:html-to-pug"><span class="type-signature"></span>convert:html-to-pug<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Конвертирует html в pug.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp convert:html-to-pug</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="convert:encode">
+    <h4 id="convert:encode"><span class="type-signature"></span>convert:encode<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Конвертирует кодировку документов.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp convert:encode</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="convert:to-svg">
+    <h4 id="convert:to-svg"><span class="type-signature"></span>convert:to-svg<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Конвертирует PNG,JPG,BMP в SVG.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp convert:to-svg</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="zip">
+    <h4 id="zip"><span class="type-signature"></span>zip<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Архивирует папку с проектом в zip архив.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">gulp zip</pre>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a>
+	
+		on February 23rd 2021, 8:36:43 pm
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+
+</body>
+</html>
