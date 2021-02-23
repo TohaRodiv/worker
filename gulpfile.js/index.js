@@ -7,6 +7,7 @@ const imagemin = require("./tasks/imagemin");
 const tinypngCompress = require("./tasks/tinypng");
 const toWebp = require("./tasks/to-webp");
 const webp2png = require("./tasks/webp-to-png");
+const toSvg = require("./tasks/to-svg");
 
 const lighthouse = require("./tasks/lighthouse");
 
@@ -24,6 +25,7 @@ const build = require("./tasks/build");
 
 const htmlToPug = require("./tasks/html-to-pug");
 const convertEncoding = require("./tasks/convert-encoding");
+const zip = require("./tasks/zip");
 
 
 const setMode = (isProduction) => (cb) => {
@@ -135,3 +137,13 @@ exports["convert:html-to-pug"] = series(htmlToPug);
  * @description Конвертирует кодировку документов.
  */
 exports["convert:encode"] = convertEncoding;
+/**
+ * @var convert:to-svg
+ * @description Конвертирует PNG,JPG,BMP в SVG.
+ */
+exports["convert:to-svg"] = toSvg;
+/**
+ * @var zip
+ * @description Архивирует папку с проектом в zip архив.
+ */
+exports["zip"] = zip;
