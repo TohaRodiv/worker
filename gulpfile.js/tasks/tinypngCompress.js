@@ -26,7 +26,7 @@ module.exports = () =>
 		.pipe (plumber ({ errorHandler: onError }))
 		.pipe(tinypng({
 			key: TINYPNG_API_KEY,
-			sigFile: `${src.img}/.tinypng-sigs`,
+			sigFile: `${build.img}/.tinypng-sigs`,
 			log: true,
 			summarize: true,
 		}))

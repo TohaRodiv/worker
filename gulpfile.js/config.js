@@ -91,6 +91,13 @@ const config = {
 			parallel: true,
 		},
 	],
+	/**
+	 * Tasks for building project
+	 */
+	buildTasks: {
+		series: ["clean"],
+		parallel: ["pug", "sass", "script", "tinypngCompress"],
+	}
 };
 
 module.exports = config;
