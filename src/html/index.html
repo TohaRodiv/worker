@@ -4,19 +4,20 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/style.min.css">
 	<title>Document</title>
 </head>
 <body>
 	@include("inc/header.html", {
-		"logo": "Lunar"
+		"logo": "Document"
 	})
-	<main>
+	<main class="main">
 		Main content
 	</main>
 	@include("inc/footer.html", {
 		"date": "2021",
-		"logo": "Lunar"
+		"logo": "Document"
 	})
+	<script src="/js/script.js"></script>
 </body>
 </html>

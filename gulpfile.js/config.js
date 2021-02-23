@@ -65,14 +65,14 @@ const config = {
 	watch: [
 		{
 			enable: true,
-			glob: `${sourceFiles.html}/**/*.html`,
+			glob: `${sourceFiles.pug}/**/*.pug`,
 			options: {},
-			watch: ["html"],
+			watch: ["pug"],
 			stream: true,
 		},
 		{
 			enable: true,
-			glob: `${sourceFiles.sass}/**/*.{sass,scss}`,
+			glob: `${sourceFiles.sass}/**/*.{scss,sass}`,
 			options: {},
 			watch: ["sass"],
 			stream: true,

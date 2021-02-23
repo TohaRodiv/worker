@@ -1,33 +1,24 @@
-:root {
-	--alpha: #FFF;
-	--betta: #F00;
+body {
+	font-family: "Exo2", sans-serif;
+	font-size: 1rem;
+	margin: 0;
 }
 
-.color--alpha {
-	color: var(--alpha);
-}
-.color--betta {
-	color: var(--betta);
-}
-.color--gamma {
-	color: #FF0;
-}
-.color--etta {
-	color: #00F;
+.header, .footer {
+	background-color: #EEE;
+	border-bottom: 2px solid #FA7;
+	padding: .5em 1em;
 }
 
-.block {
-	color: #FFF;
+.footer {
+	border-bottom: none;
+	border-top: 2px solid #FA7;
+}
+.main {
+	padding: 1em;
 }
 
-.swipe {
-	color: #F00;
+h1 {
+	line-height: 1;
+	margin: 0;
 }
-
-.yellow {
-	color: #FFF;
-	background-color: #FF0;
-	border: 1px solid #F00;
-}
-
-.black--color { color: black; }

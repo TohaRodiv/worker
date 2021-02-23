@@ -1,27 +1,11 @@
-doctype html
-html(lang="en")
-	head
-		meta(http-equiv="Content-Type" content="text/html;charset=UTF-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1.0")
-		meta(http-equiv="X-UA-Compatible" content="ie=edge")
-		meta(name="description" content="")
-		meta(name="keywords" content="")
-		title PUG
-		link(rel="stylesheet" href="./css/style.min.css")
-	body
-		.cta
-			.cta__container
-				.cta__head CTA
-				.cta__text Describe this CTA block
-				.cta__btn-group
-					button.cta__btn +7 (4212) 63-32-32
-					button.cta__btn Купить
-					button.cta__btn.inverted Позвонить
-		script(src="./js/index.min.js") 
-		script.
-			const btns = document.querySelectorAll (".cta__btn");
-			for (let i = 0; i < btns.length; i++) {
-				btns[i].addEventListener ("click", e => {
-					alert (e.currentTarget.innerText);
-				});
-			}
+extends inc/base
+
+block variables
+	- const title = "pug-starter"
+
+block content
+	#body
+		h1.main
+
+block scripts
+	script(src="js/script.js")

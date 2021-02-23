@@ -14,7 +14,7 @@ const include = require("gulp-include");
 
 const CONFIG = {
 	SOURCEMAP: false,
-	MINIFIED: true,
+	MINIFIED: true, // !disable for fix bug autoreload browser, not include *.min.css - not working!
 	INCLUDE: true,
 };
 
@@ -42,11 +42,7 @@ module.exports = () =>
 		.pipe(
 			gulpif(
 				CONFIG.INCLUDE,
-				include({
-					extensions: "css",
-					hardFail: false,
-					separateInputs: true,
-				})
+				include()
 			)
 		)
 		.pipe(

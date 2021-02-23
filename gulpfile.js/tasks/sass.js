@@ -14,7 +14,7 @@ const ignore = require("gulp-ignore");
 
 const CONFIG = {
 	SOURCEMAP: false,
-	MINIFIED: true,
+	MINIFIED: true, // !disable for fix bug autoreload browser, not include *.min.css - not working!
 };
 
 const EXCLUDE_INC_FILE = "_*.{sass,scss}";
