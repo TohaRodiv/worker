@@ -19,6 +19,7 @@ const concatCss = require("./tasks/concat-css");
 
 const watcher = require("./tasks/watch");
 const createServer = require("./tasks/server");
+const build = require("./tasks/build");
 
 const setMode = (isProduction) => (cb) => {
 	process.env.NODE_ENV = isProduction ? "production" : "development";
@@ -36,7 +37,7 @@ exports["dev"] = series(setMode(false), clean, watcher(createServer));
  * @var build
  * @description Собирает и минифицирует код для лучшей производительности
  */
-exports["build"] = series(setMode(true), clean);
+exports["build"] = series(setMode(true), build);
 /**
  * @var server
  * @description Запускает локальный сервер.
@@ -109,3 +110,8 @@ exports["concat:js"] = series(concatJs);
  * @description Объединяет несколько *.css файлов в один минифицированный и не минифицированный файл.
  */
 exports["concat:css"] = series(concatCss);
+/**
+ * @var clean
+ * @description Очищает папку с собранным проектом.
+ */
+exports["clean"] = clean;

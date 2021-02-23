@@ -10,11 +10,15 @@ const gulpBeautify = require("gulp-beautify");
 const rename = require("gulp-rename");
 const gulpif = require("gulp-if");
 const createNotify = require("./../util/create-notify");
+const ignore = require("gulp-ignore");
 
 const CONFIG = {
 	SOURCEMAP: false,
 	MINIFIED: true,
 };
+
+const EXCLUDE_INC_FILE = "_*.{sass,scss}";
+const EXCLUDE_INC_DIR = "inc/**/*";
 
 const onError = createNotify("error", {
 	title: "ошибка компиляции!",
@@ -73,6 +77,8 @@ module.exports = () =>
 		)
 		.pipe(shorthand())
 		.pipe(gulpBeautify.css(beautify.css))
+		.pipe(ignore.exclude(EXCLUDE_INC_FILE))
+		.pipe(ignore.exclude(EXCLUDE_INC_DIR))
 		.pipe(gulp.dest(build.css))
 		.pipe(
 			cleanCSS(

@@ -1,3 +1,26 @@
+.color--alpha {
+	color: #0af;
+}
+
+.color--betta {
+	color: #000;
+}
+
+.block__item {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.block--light {
+	background: #dedede;
+	color: #555;
+}
+
+.block--dark {
+	background: #555;
+	color: #dedede;
+}
+
 body {
 	margin: 0;
 	font-family: Exo2, sans-serif;

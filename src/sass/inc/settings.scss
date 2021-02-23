@@ -1,0 +1,11 @@
+$color-alpha: #0AF;
+$color-betta: #000;
+
+.color{
+	&--alpha {
+		color: $color-alpha;
+	}
+	&--betta {
+		color: $color-betta;
+	}
+}
