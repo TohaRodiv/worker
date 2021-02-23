@@ -6,6 +6,7 @@ const clean = require("./tasks/clean");
 const imageMinify = require("./tasks/imageMinify");
 const tinypngCompress = require("./tasks/tinypngCompress");
 const toWebp = require("./tasks/toWebp");
+const webp2png = require("./tasks/webp2png");
 
 const lighthouse = require("./tasks/lighthouse");
 
@@ -62,10 +63,15 @@ exports["imagemin"] = parallel(imageMinify);
  */
 exports["tinypng"] = parallel(tinypngCompress);
 /**
- * @var to-webp
+ * @var convert:to-webp
  * @description Конвертирует png,jpg,jpeg,tiff в формат webp.
  */
-exports["to-webp"] = parallel(toWebp);
+exports["convert:to-webp"] = parallel(toWebp);
+/**
+ * @var convert:from-webp
+ * @description Конвертирует из webp в png.
+ */
+exports["convert:from-webp"] = parallel(webp2png);
 /**
  * @var lighthouse
  * @description Запускает lighthouse и сохраняет результат проверки в файл.
