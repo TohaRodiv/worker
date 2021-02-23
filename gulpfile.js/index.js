@@ -1,7 +1,3 @@
-/**
- * @fileOverview Подробное описание команд.
- */
-
 const { series, parallel } = require("gulp");
 
 const genDoc = require("./tasks/jsdoc");
