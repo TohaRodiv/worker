@@ -1,0 +1,28 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "opts": {
+    "destination": "./docs"
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": true
+    },
+    "path": "ink-docstrap",
+    "theme": "readable",
+    "navType": "horizontal",
+    "linenums": false,
+    "dateFormat": "MMMM Do YYYY, h:mm:ss a",
+	"syntaxTheme": "dark",
+	"systemName": "Gulp-worker",
+	"inverseNav": true,
+	"search": false,
+	"sort": "version"
+  }
+}

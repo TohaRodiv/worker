@@ -1,6 +1,7 @@
 const path = require("path");
 const concatOrder = require("./concat-order.config");
 const beautifyConfig = require("./beautifyrc.json");
+const jsdocConfig = require("./jsdocConfig.json");
 
 const root = path.join(__dirname, "../");
 const build_dir = path.join(root, "build");
@@ -39,6 +40,10 @@ const config = {
 	 * Config gulp-beautify
 	 */
 	beautify: beautifyConfig,
+	/**
+	 * JSDoc config
+	 */
+	jsdocConfig: jsdocConfig,
 	/**
 	 * Build folder
 	 */
