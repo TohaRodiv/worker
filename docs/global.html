@@ -127,7 +127,7 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
+        <h3 class="subsection-title">Основные команды</h3>
 
         <dl>
             
@@ -189,7 +189,7 @@
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp dev
 
@@ -272,7 +272,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp build
 
@@ -351,7 +351,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp server
 
@@ -427,7 +427,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp watch</pre>
 
@@ -494,7 +494,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp imagemin</pre>
 
@@ -562,7 +562,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp tinypng</pre>
 
@@ -628,7 +628,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp convert:to-webp</pre>
 
@@ -694,7 +694,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp convert:from-webp</pre>
 
@@ -760,7 +760,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp lighthouse</pre>
 
@@ -826,7 +826,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp pug</pre>
 
@@ -893,7 +893,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp sass</pre>
 
@@ -961,7 +961,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp js</pre>
 
@@ -1028,7 +1028,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp html</pre>
 
@@ -1094,7 +1094,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp gen:doc</pre>
 
@@ -1160,7 +1160,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp concat:js</pre>
 
@@ -1226,7 +1226,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp concat:css</pre>
 
@@ -1292,7 +1292,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp clean</pre>
 
@@ -1358,7 +1358,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp convert:html-to-pug</pre>
 
@@ -1424,7 +1424,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp convert:encode</pre>
 
@@ -1490,7 +1490,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp convert:to-svg</pre>
 
@@ -1556,7 +1556,7 @@ UI: http://localhost:3001
 
 
     
-        <h5>Example</h5>
+        <h5>Пример:</h5>
         
     <pre class="sunlight-highlight-javascript">gulp zip</pre>
 
@@ -1622,15 +1622,15 @@ $( function () {
 	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
 		var $this = $( this );
 
-		var example = $this.find( "code" );
-		exampleText = example.html();
-		var lang = /{@lang (.*?)}/.exec( exampleText );
+		var Пример: = $this.find( "code" );
+		Пример:Text = Пример:.html();
+		var lang = /{@lang (.*?)}/.exec( Пример:Text );
 		if ( lang && lang[1] ) {
-			exampleText = exampleText.replace( lang[0], "" );
-			example.html( exampleText );
+			Пример:Text = Пример:Text.replace( lang[0], "" );
+			Пример:.html( Пример:Text );
 			lang = lang[1];
 		} else {
-			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			var langClassMatch = Пример:.parent()[0].className.match(/lang\-(\S+)/);
 			lang = langClassMatch ? langClassMatch[1] : "javascript";
 		}
 
@@ -1639,7 +1639,7 @@ $( function () {
 			$this
 			.addClass( "sunlight-highlight-" + lang )
 			.addClass( "linenums" )
-			.html( example.html() );
+			.html( Пример:.html() );
 
 		}
 	} );
