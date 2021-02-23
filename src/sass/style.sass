@@ -3,25 +3,22 @@ $cta-image: "https://www.trumpf.com/filestorage/TRUMPF_Master/_processed_/6/f/cs
 body
 	margin: 0
 	font-family: "Exo2", sans-serif
-	display: grid
-	grid-template-rows: 3
-	grid-template-columns: 2
-	grid-gap: 1
 
 .cta
-	display: subgrid
 	background: url($cta-image) no-repeat center / cover
 	min-height: 100vh
 	display: flex
-	align-items: center
+	align-items: stretch
 	justify-content: center
+
 
 	&__container
 		display: flex
 		flex-direction: column
 		align-items: center
 		justify-content: center
-		max-width: 70%
+		flex: 0 100%
+		padding: 1em 0
 
 		background-color: rgba(0, 0, 0, .45)
 
@@ -40,6 +37,9 @@ body
 		flex-wrap: wrap
 		margin: 1em 0 0 0
 		padding: .5em 1em
+
+		@media (max-width: 500px)
+			justify-content: center
 
 	&__btn
 		text-decoration: none

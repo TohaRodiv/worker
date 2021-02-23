@@ -1,4 +1,4 @@
-const { series, parallel, } = require("gulp");
+const { series, parallel } = require("gulp");
 
 const genDoc = require("./tasks/jsdoc");
 const clean = require("./tasks/clean");
@@ -9,7 +9,7 @@ const toWebp = require("./tasks/toWebp");
 
 const lighthouse = require("./tasks/lighthouse");
 
-const pugToHtml = require("./tasks/pugToHtml");
+const pug = require("./tasks/pug");
 const sass = require("./tasks/sass");
 const js = require("./tasks/script");
 const html = require("./tasks/html");
@@ -17,8 +17,10 @@ const html = require("./tasks/html");
 const concatJs = require("./tasks/concat-js");
 const concatCss = require("./tasks/concat-css");
 
+const watcher = require("./tasks/watch");
+const createServer = require("./tasks/server");
 
-const setMode = isProduction => cb => {
+const setMode = (isProduction) => (cb) => {
 	process.env.NODE_ENV = isProduction ? "production" : "development";
 	cb();
 };
@@ -29,12 +31,22 @@ const setMode = isProduction => cb => {
  * пропускает все через валидаторы и форматирует код (eslint, beautyfy js, css, html),
  * чтобы в будущем было его легче поддерживать.
  */
-exports["dev"] = series(setMode (false), clean);
+exports["dev"] = series(setMode(false), clean, watcher(createServer));
 /**
  * @var build
  * @description Собирает и минифицирует код для лучшей производительности
  */
 exports["build"] = series(setMode(true), clean);
+/**
+ * @var server
+ * @description Запускает локальный сервер.
+ */
+exports["server"] = series(createServer);
+/**
+ * @var watch
+ * @description Запускает слежку за файлами и выполнение задач.
+ */
+exports["watch"] = series(watcher());
 /**
  * @var imagemin
  * @description Сжимает изображения. Не очень эффективно. Поддерживает файлы: gif,png,jpg,svg,webp.
@@ -62,38 +74,38 @@ exports["lighthouse"] = series(lighthouse);
  * @var pug
  * @description Компилятор pug/jade в html. Подключен линтер и БЭМ-валидатор.
  */
-exports["pug"] = series (pugToHtml);
+exports["pug"] = series(pug);
 /**
  * @var sass
  * @description Компилятор sass/scss в css. Подключен автопрефиксер.
  * На выходе имеем обычную версию *.css и минифицированную *.min.css. Sourcemap отключен.
  */
-exports["sass"] = series (sass);
+exports["sass"] = series(sass);
 /**
  * @var js
  * @description Форматирует и проверяет javascript код.
  * Раставляет правильные отступы, ковычки одного типа ("), раставляет точки с запятой (;).
  * Создает обычную версию *.js и минифицированную *.min.js. Без sourcemap.
  */
-exports["js"] = series (js);
+exports["js"] = series(js);
 /**
  * @var html
  * @description Форматирует и проверяет html код. Подключает другие html файлы. Для подробностей
  * см. настройки данного таска.
  */
-exports["html"] = series (html);
+exports["html"] = series(html);
 /**
  * @var gen:doc
  * @description Генерирует документацию.
  */
-exports["gen:doc"] = series (genDoc);
+exports["gen:doc"] = series(genDoc);
 /**
  * @var concat:js
  * @description Объединяет несколько *.js файлов в один минифицированный и не минифицированный файл.
  */
-exports["concat:js"] = series (concatJs);
+exports["concat:js"] = series(concatJs);
 /**
  * @var concat:css
  * @description Объединяет несколько *.css файлов в один минифицированный и не минифицированный файл.
  */
-exports["concat:css"] = series (concatCss);
+exports["concat:css"] = series(concatCss);
