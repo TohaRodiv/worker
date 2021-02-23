@@ -36,7 +36,7 @@ const onError = createNotify("error", {
 
 module.exports = () =>
 	gulp
-		.src(`${src.sass}/**/*.{sass,scss}`)
+		.src(`${src.css}/**/*.css`)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(gulpif(CONFIG.SOURCEMAP && CONFIG.MINIFIED, sourcemaps.init()))
 		.pipe(
