@@ -13,7 +13,7 @@ const gulpif = require("gulp-if");
 const CONFIG = {
 	HTML_VALIDATOR: true, // html w3c validator
 	BEM_VALIDATOR: true, // bem validator
-	BEAUTIFY: true, 	// beautify html
+	BEAUTIFY: true, // beautify html
 };
 
 const EXCLUDE_INC_FILE = "**/*.inc.pug";
@@ -43,9 +43,9 @@ module.exports = () =>
 				pretty: true,
 			})
 		)
-		.pipe(gulpif(CONFIG.HTML_VALIDATOR, htmlValidator()))
 		.pipe(gulpif(CONFIG.BEM_VALIDATOR, bemValidator()))
-		.pipe(gulpif(CONFIG.BEAUTIFY, gulpBeautify(beautify.html)))
 		.pipe(ignore.exclude(EXCLUDE_INC_FILE))
 		.pipe(ignore.exclude(EXCLUDE_INC_DIR))
+		.pipe(gulpif(CONFIG.HTML_VALIDATOR, htmlValidator()))
+		.pipe(gulpif(CONFIG.BEAUTIFY, gulpBeautify(beautify.html)))
 		.pipe(gulp.dest(build.html));

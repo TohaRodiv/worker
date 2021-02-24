@@ -5,7 +5,7 @@ function updateTime() {
 	main.closest ("*").style.fontSize = `${10 + seconds * 2}px`;
 }
 
-const reqId = requestAnimationFrame(function update(time) {
+requestAnimationFrame(function update() {
 	updateTime();
 	requestAnimationFrame(update);
 });

@@ -19,8 +19,8 @@ module.exports = (createServer = null) => () => {
 	 */
 	configWatch.forEach((item) => {
 		if (item.parallel) {
-			item.watch.forEach (watch => {
-				tasks.push (parallel (watch));
+			item.watch.forEach((watch) => {
+				tasks.push(parallel(watch));
 			});
 		} else {
 			tasks.push(...item.watch);
@@ -28,6 +28,7 @@ module.exports = (createServer = null) => () => {
 	});
 
 	if (null !== createServer) {
+		
 		tasks.push(() => {
 			server = createServer();
 		});

@@ -75,7 +75,7 @@ const config = {
 			glob: `${sourceFiles.sass}/**/*.{scss,sass}`,
 			options: {},
 			watch: ["sass"],
-			stream: true,
+			stream: false,
 		},
 		{
 			enable: true,

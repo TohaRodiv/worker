@@ -59,6 +59,7 @@ module.exports = () =>
 						"no-undef": 1,
 						"no-unused-vars": 1,
 						"no-mixed-spaces-and-tabs": 1,
+						"linebreak-style": 0,
 					},
 				})
 			)
