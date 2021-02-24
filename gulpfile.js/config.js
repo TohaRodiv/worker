@@ -72,10 +72,10 @@ const config = {
 		},
 		{
 			enable: true,
-			glob: `${sourceFiles.sass}/**/*.{sass,scss}`,
+			glob: `${sourceFiles.sass}/**/*.{scss,sass}`,
 			options: {},
 			watch: ["sass"],
-			stream: true,
+			stream: false,
 		},
 		{
 			enable: true,

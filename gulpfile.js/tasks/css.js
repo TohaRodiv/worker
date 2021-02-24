@@ -1,7 +1,6 @@
 const { build, src, beautify } = require("./../config");
 const gulp = require("gulp");
 const plumber = require("gulp-plumber");
-const sass = require("gulp-sass");
 const cleanCSS = require("gulp-clean-css");
 const sourcemaps = require("gulp-sourcemaps");
 const shorthand = require("gulp-shorthand");
@@ -11,13 +10,15 @@ const rename = require("gulp-rename");
 const gulpif = require("gulp-if");
 const createNotify = require("./../util/create-notify");
 const ignore = require("gulp-ignore");
+const include = require("gulp-include");
 
 const CONFIG = {
 	SOURCEMAP: false,
 	MINIFIED: true, // !disable for fix bug autoreload browser, not include *.min.css - not working!
+	INCLUDE: true,
 };
 
-const EXCLUDE_INC_FILE = "_*.{sass,scss}";
+const EXCLUDE_INC_FILE = "_*.css";
 const EXCLUDE_INC_DIR = "inc/**/*";
 
 const onError = createNotify("error", {
@@ -35,10 +36,15 @@ const onError = createNotify("error", {
 
 module.exports = () =>
 	gulp
-		.src(`${src.sass}/**/*.{sass,scss}`)
+		.src(`${src.css}/**/*.css`)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(gulpif(CONFIG.SOURCEMAP && CONFIG.MINIFIED, sourcemaps.init()))
-		.pipe(sass())
+		.pipe(
+			gulpif(
+				CONFIG.INCLUDE,
+				include()
+			)
+		)
 		.pipe(
 			cleanCSS(
 				{

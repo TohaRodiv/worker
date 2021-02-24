@@ -1,4 +1,4 @@
-const server = require("browser-sync").create();
+const server = require("browser-sync").create("Browsersync server");
 const config = require("./../config");
 
 /**

@@ -1,8 +1,9 @@
 {
-  "name": "gulp-worker",
+  "name": "project-gulp-worker",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Автоматизация задач, сжатие и конвертирование изображений, верстка с live-сервером, удобная и быстрая разработка с помощью шаблонизатора pug, препроцессора sass/scss, генерирование отчетов lighthouse. Форматирование, валидация и оптимизация кода.",
+  "keywords": ["gulp-worker"], 
+  "main": "./gulpfile.js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
