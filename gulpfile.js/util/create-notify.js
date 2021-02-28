@@ -1,5 +1,5 @@
 const notify = require("gulp-notify");
-const { root } = require("./../config");
+const { root } = require("../config");
 const path = require("path");
 
 /**
@@ -9,11 +9,14 @@ const path = require("path");
  * @return {function} - configured notify
  */
 function createNotify(type, options = {}) {
-	if ("error" === type) {
+	switch (type) {
+	case "error":
 		return function (err) {
-			options.isDebug && console.log (err);
+			options.isDebug && console.log(err);
 			const error = {
-				plugin: options.paramNames?.plugin ? err[options.paramNames.plugin] : "",
+				plugin: options.paramNames?.plugin
+					? err[options.paramNames.plugin]
+					: "",
 				title: options.paramNames?.title ? err[options.paramNames.title] : "",
 				file: options.paramNames?.file ? err[options.paramNames.file] : "",
 				msg: options.paramNames?.msg ? err[options.paramNames.msg] : "",
@@ -23,12 +26,21 @@ function createNotify(type, options = {}) {
 				title: `${error.plugin}: ${options.title || "ошибка!"}`,
 				message: `${error.file
 					.toString()
-					// eslint-disable-next-line no-useless-escape
-					.replace(new RegExp(".*?.{1}" + path.basename(root)), "")} - ${error.msg}`,
+				// eslint-disable-next-line no-useless-escape
+					.replace(new RegExp(".*?.{1}" + path.basename(root)), "")} - ${
+					error.msg
+				}`,
 				sound: options.sound || false,
 			})(err);
 			this.emit("end");
 		};
+
+	case "info":
+		return notify({
+			title: `${options.title || "Внимание!"}`,
+			message: options.msg || "",
+			sound: options.sound || false,
+		});
 	}
 }
 

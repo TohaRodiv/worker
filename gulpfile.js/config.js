@@ -83,9 +83,9 @@ const config = {
 		},
 		{
 			enable: true,
-			glob: `${sourceFiles.js}/**/*.js`,
+			glob: `${sourceFiles.js}/**/*.ts`,
 			options: {},
-			watch: ["js"],
+			watch: ["ts"],
 			stream: true,
 		},
 		{

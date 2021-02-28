@@ -26,9 +26,15 @@ const onError = createNotify("error", {
 		title: "title",
 		msg: "message",
 		file: false,
-	},
+	}, 	
 
 	isDebug: true,
+});
+
+const notifyCompile = createNotify("info", {
+	title: "TypeScript",
+	message: "Скомпилирован успешно!",
+	sound: "Frog",
 });
 
 module.exports = () =>
@@ -61,4 +67,5 @@ module.exports = () =>
 		.pipe(gulpif(CONFIG.EXPANDED, gulp.dest(build.js)))
 		.pipe(gulpif(CONFIG.MINIFIED, terser()))
 		.pipe(gulpif(CONFIG.MINIFIED, rename({ suffix: ".min" })))
-		.pipe(gulpif(CONFIG.MINIFIED, gulp.dest(build.js)));
+		.pipe(gulpif(CONFIG.MINIFIED, gulp.dest(build.js)))
+		.pipe (notifyCompile);
