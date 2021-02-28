@@ -16,6 +16,7 @@ const sass = require("./tasks/sass");
 const js = require("./tasks/js");
 const html = require("./tasks/html");
 const css = require("./tasks/css");
+const ts = require("./tasks/ts");
 
 const concatJs = require("./tasks/concat-js");
 const concatCss = require("./tasks/concat-css");
@@ -237,3 +238,10 @@ exports["zip"] = zip;
  * gulp css
  */
 exports["css"] = css;
+/**
+ * @var ts
+ * @description Компилятор TypeScript в JS
+ * @example
+ * gulp ts
+ */
+exports["ts"] = ts;
