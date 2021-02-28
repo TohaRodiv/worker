@@ -23,7 +23,7 @@ const config = {
 	/**
 	 * Tinypng api-key
 	 */
-	TINYPNG_API_KEY: ["gPC3S4MSYBxXtsYwQV8KTrlkSgW3p086"][0],
+	TINYPNG_API_KEY: ["YOUR-API-KEY-TINYPNG"][0],
 	/**
 	 * Root dir
 	 */
