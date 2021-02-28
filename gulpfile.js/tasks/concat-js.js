@@ -7,20 +7,13 @@ const gulpOrder = require ("gulp-order");
 const createNotify = require("./../util/create-notify");
 const plumber = require ("gulp-plumber");
 
+
 const onError = createNotify("error", {
-	title: "ошибка конкатенации!",
+	title: "JS",
+	message: "Ошибка конкатенации файлов!",
 	sound: true,
-	/**
-	 * Todo: если будет ошибка, заполнить эти поля!
-	 */
-	paramNames: {
-		plugin: "plugin",
-		title: "title",
-		msg: "messageOriginal",
-		file: "file",
-	},
-	
-	isDebug: true,
+
+	IS_DEBUG: true,
 });
 
 

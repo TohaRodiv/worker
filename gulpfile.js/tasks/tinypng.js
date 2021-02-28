@@ -8,16 +8,11 @@ const createNotify = require("../util/create-notify");
 const plumber = require("gulp-plumber");
 
 const onError = createNotify("error", {
-	title: "ошибка!",
+	title: "TINYPNG",
+	message: "Ошибка компиляции!",
 	sound: true,
-	paramNames: {
-		plugin: "plugin",
-		title: "title",
-		msg: "message",
-		file: false,
-	},
 
-	isDebug: true,
+	IS_DEBUG: true,
 });
 
 module.exports = () =>

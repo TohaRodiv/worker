@@ -22,16 +22,11 @@ const EXCLUDE_INC_FILE = "_*.css";
 const EXCLUDE_INC_DIR = "inc/**/*";
 
 const onError = createNotify("error", {
-	title: "ошибка компиляции!",
+	title: "CSS",
+	message: "Ошибка компиляции!",
 	sound: true,
-	paramNames: {
-		plugin: "plugin",
-		title: "title",
-		msg: "messageOriginal",
-		file: "file",
-	},
 
-	isDebug: true,
+	IS_DEBUG: true,
 });
 
 module.exports = () =>

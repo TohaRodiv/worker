@@ -20,17 +20,11 @@ const EXCLUDE_INC_FILE = "**/*.inc.pug";
 const EXCLUDE_INC_DIR = "inc/**/*";
 
 const onError = createNotify("error", {
-	title: "ошибка компиляции!",
+	title: "PUG",
+	message: "Ошибка компиляции!",
 	sound: true,
 
-	paramNames: {
-		plugin: "plugin",
-		title: "title",
-		msg: "msg",
-		file: "filename",
-	},
-
-	isDebug: true,
+	IS_DEBUG: true,
 });
 
 module.exports = () =>

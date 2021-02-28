@@ -19,19 +19,11 @@ const EXCLUDE_INC_FILE = "**/*.inc.html";
 const EXCLUDE_INC_DIR = "inc/**/*";
 
 const onError = createNotify("error", {
-	title: "ошибка компиляции!",
+	title: "HTML",
+	message: "Ошибка компиляции!",
 	sound: true,
-	/**
-	 * Todo: если будет ошибка, заполнить эти поля!
-	 */
-	paramNames: {
-		plugin: "plugin",
-		title: "title",
-		msg: "messageOriginal",
-		file: "file",
-	},
 
-	isDebug: true,
+	IS_DEBUG: true,
 });
 
 module.exports = () =>
