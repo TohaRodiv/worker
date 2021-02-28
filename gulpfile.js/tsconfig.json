@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"useDefineForClassFields": true,
+		"target": "ES2020",
+		"esModuleInterop": true,
+		"moduleResolution": "Node",
+		"lib": [
+			"ES2020",
+			"DOM"
+		],
+		"baseUrl": ".",
+		"paths": {}
+	},
+	"include": [
+		"**/*.ts",
+	],
+	"exclude": [
+		"node_modules",
+		"**/*.spec.ts"
+	],
+}

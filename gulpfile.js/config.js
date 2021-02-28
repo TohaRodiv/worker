@@ -33,6 +33,10 @@ const config = {
 	 */
 	report: path.join(build_dir, "lighthouse-report"),
 	/**
+	 * tsconfig.json file path
+	 */
+	tsconfig: path.join (root, "gulpfile.js", "tsconfig.json"),
+	/**
 	 * Concat order config
 	 */
 	order: concatOrder,

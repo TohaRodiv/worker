@@ -3,3 +3,4 @@ function toBeProps (id: number, title: string): string {
 }
 
 console.log (toBeProps (3, "Hello"));
+//gPC3S4MSYBxXtsYwQV8KTrlkSgW3p086
