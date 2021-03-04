@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Gulp-worker Index</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.dark.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.readable.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Gulp-worker</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#dev">dev</a></li><li><a href="global.html#build">build</a></li><li><a href="global.html#server">server</a></li><li><a href="global.html#watch">watch</a></li><li><a href="global.html#imagemin">imagemin</a></li><li><a href="global.html#tinypng">tinypng</a></li><li><a href="global.html#convert:to-webp">convert:to-webp</a></li><li><a href="global.html#convert:from-webp">convert:from-webp</a></li><li><a href="global.html#lighthouse">lighthouse</a></li><li><a href="global.html#pug">pug</a></li><li><a href="global.html#sass">sass</a></li><li><a href="global.html#js">js</a></li><li><a href="global.html#html">html</a></li><li><a href="global.html#gen:doc">gen:doc</a></li><li><a href="global.html#concat:js">concat:js</a></li><li><a href="global.html#concat:css">concat:css</a></li><li><a href="global.html#clean">clean</a></li><li><a href="global.html#convert:html-to-pug">convert:html-to-pug</a></li><li><a href="global.html#convert:encode">convert:encode</a></li><li><a href="global.html#convert:to-svg">convert:to-svg</a></li><li><a href="global.html#zip">zip</a></li><li><a href="global.html#css">css</a></li><li><a href="global.html#ts">ts</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section class="readme-section">
+        <article><h1>Документация gulp-worker</h1>
+<p><strong>Автоматизация задач, сжатие и конвертирование изображений, верстка с live-сервером, удобная и быстрая разработка с помощью шаблонизатора pug, препроцессора sass/scss, генерирование отчетов lighthouse. Форматирование, валидация и оптимизация кода.</strong></p>
+<hr>
+<h2>Установка</h2>
+<ol>
+<li>Установить NodeJS. <a href="https://nodejs.org/ru/">nodejs.org</a></li>
+<li>Установить переменную окружения PATH для NodeJS.</li>
+<li>Установить gulp глобально: <code>npm install --global gulp-cli</code>. <a href="https://gulpjs.com/docs/en/getting-started/quick-start/">gulpjs.com</a></li>
+<li>Установить переменную окружения PATH для gulp.</li>
+<li>Установить gulp-worker через менеджер пакетов npm, либо клонировать репозиторий и выполнить <code>npm install</code> в папке с проектом.</li>
+</ol>
+<hr>
+<p>Если NodeJS был установлен, но в консоле он недоступен, необходимо установить переменную окружения PATH.
+Если windows ругается (ExecutionPolicy), нужно выполнить в консоли с правами администратора <code>Set-ExecutionPolicy Unrestricted -Scope CurrentUser</code>.</p>
+<p><strong>Пример использования:</strong></p>
+<pre class="prettyprint source lang-bash"><code>gulp server
+
+[20:26:16] Using gulpfile ~/www/dev/gulp/gulpfile.js
+[20:26:16] Starting 'server'...
+[Browsersync] Access URLs:
+----------------------------
+Local: http://localhost:3000
+----------------------------
+UI: http://localhost:3001
+----------------------------
+[Browsersync] Serving files from: /www/dev/gulp/builds
+</code></pre>
+<h2>Использование</h2>
+<ul>
+<li>Открываем папку с установленным gulp-worker</li>
+<li>Открываем в этой папке терминал (powershell, gitbash и т.п.). Для windows лучше <a href="https://gitforwindows.org/">gitbash</a> - он удобнее</li>
+<li>Копируем нужные файлы в папку src. Например картинки в src/images, css файлы в src/css, javascript в src/js.</li>
+<li>Запускаем в терминале нужную задачу.</li>
+</ul>
+<hr>
+<p>Например для сжатия картинок через сервис tinypng:</p>
+<ul>
+<li>Если еще нет api-key для этого сервиса, то заходим на любой tempmail, копируем email и регистрируемся на tinypng под этим адрессом, так как лимит 500 изобр. в месяц. После подтв. регистрации находим там свой api-key, включаем его и копируем. Далее вставляем его в конфиг gulp-worker: gulpfile.js/config.js -&gt; API_KEY_TINYPNG = &quot;СЮДА ПИШЕМ СВОЙ API-KEY&quot;</li>
+<li>Копируем в папку src/images изображения</li>
+<li>Открываем терминал в корневой папки gulp-worker, где package.json лежит.</li>
+<li>Вводим команду <code>gulp tinypng</code></li>
+<li>Появляется в корневой папке директория build, в которой лежит папка images с оптимизированными изображениями.
+Полный список тасков лежит в файле gulpfile.js/index.js. Также в этой документации привиденно описание всех команд.</li>
+</ul>
+<h2>Таски</h2>
+<p>Все таски хранятся в &quot;gulpfile.js/tasks&quot;. Если нужно изменить параметры для какой-то задачи, находим нужный файл в этой директории и изменяем его под свои нужды. Настройки gulp-плагинов легко найти на сайте <a href="https://npmjs.com">npm</a>. Также через консоль можно посмотреть список всех доступных задач: <code>gulp --tasks-simple</code>.</p>
+<h2>Настройка</h2>
+<p>Самые важные параметры вынесены в отдельный файл &quot;gulpfile.js/config.js&quot;. В нём содержатся пути до файлов в дириктории src и build, а также API-KEY для tinypng и некоторые другие. Более детальная настройка производится внутри самой таски.
+Файл concat-order.config - здесь указывать очередность конкатенации файлов.</p>
+<hr>
+<p><strong>Документация на стадии разработки, поэтому в ней могут быть ошибки и недочеты.</strong></p>
+<ul>
+<li><a href="https://jsdoc.app/">jsdoc</a> - подробности для генерирования документации</li>
+<li><a href="https://gist.github.com/Jekins/2bf2d0638163f1294637">markdown</a> - markdown документация</li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a>
+	
+		on February 28th 2021, 10:00:53 pm
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+
+</body>
+</html>
